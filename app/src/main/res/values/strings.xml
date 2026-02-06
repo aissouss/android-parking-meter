@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Parc-Mètre</string>
+
+    <!-- Navigation -->
+    <string name="nav_client">Client</string>
+    <string name="nav_config">Configuration</string>
+    <string name="nav_admin">Administration</string>
+
+    <!-- Client Activity -->
+    <string name="titre_parcmetre">PARC-MÈTRE</string>
+    <string name="montant_initial">0.000 DT</string>
+    <string name="coin_100">100</string>
+    <string name="coin_200">200</string>
+    <string name="coin_500">500</string>
+    <string name="coin_1000">1 DT</string>
+    <string name="btn_valider">VALIDER</string>
+    <string name="btn_annuler">ANNULER</string>
+    <string name="hors_service_titre">PARC-MÈTRE\nHORS SERVICE</string>
+    <string name="hors_service_message">Veuillez nous excuser pour la gêne occasionnée</string>
+
+    <!-- Config Activity -->
+    <string name="config_titre">Configuration</string>
+    <string name="config_prix_minute">Prix par minute (millimes)</string>
+    <string name="config_timeout">Timeout (secondes)</string>
+    <string name="config_montant_min">Montant minimum (millimes)</string>
+    <string name="config_etat">État</string>
+    <string name="config_en_service">En service</string>
+    <string name="config_hors_service">Hors service</string>
+    <string name="config_adresse_ip">Adresse IP</string>
+    <string name="config_latitude">Latitude</string>
+    <string name="config_longitude">Longitude</string>
+    <string name="config_tickets">Tickets restants</string>
+    <string name="config_titre_municipalite">Titre</string>
+    <string name="config_zone">Zone</string>
+    <string name="config_sauvegarder">SAUVEGARDER</string>
+    <string name="config_sauvegarde_ok">Configuration sauvegardée avec succès</string>
+
+    <!-- Admin -->
+    <string name="admin_login_titre">Administration</string>
+    <string name="admin_pin_hint">Code PIN</string>
+    <string name="admin_connexion">CONNEXION</string>
+    <string name="admin_pin_erreur">Code PIN incorrect</string>
+    <string name="admin_dashboard_titre">Tableau de bord</string>
+    <string name="admin_etat">État du parc-mètre</string>
+    <string name="admin_total_encaisse">Total encaissé</string>
+    <string name="admin_nb_sessions">Nombre de sessions</string>
+    <string name="admin_tickets_restants">Tickets restants</string>
+    <string name="admin_vider_caisse">Vider la caisse</string>
+    <string name="admin_changer_bobine">Changer bobine</string>
+    <string name="admin_toggle_etat">Changer état</string>
+    <string name="admin_liste_sessions">Liste des sessions</string>
+    <string name="admin_panne_papier">PANNE PAPIER</string>
+    <string name="admin_panne_monnaie">PANNE MONNAIE</string>
+    <string name="admin_toggle_panne_monnaie">Signaler panne monnaie</string>
+    <string name="admin_confirm_vider_caisse_titre">Confirmer</string>
+    <string name="admin_confirm_vider_caisse_message">Voulez-vous vraiment vider la caisse ? Cette action est irréversible.</string>
+    <string name="admin_confirm_oui">Oui</string>
+    <string name="admin_confirm_non">Non</string>
+
+    <!-- Session item -->
+    <string name="session_id">ID: %d</string>
+    <string name="session_acheve">Achevé</string>
+    <string name="session_inacheve">Inachevé</string>
+</resources>
