@@ -1,73 +1,124 @@
-# Mini-Projet Parc-mètre
+# 🅿️ Android Parking Meter
 
-Application Android de gestion d'un parc-mètre avec Kotlin et Jetpack Compose.
+> **Academic Project** — A native Android application simulating a smart parking meter with separate client and admin interfaces.
 
-## Arborescence du projet
+---
+
+## ✨ Features
+
+### 👤 Client Interface
+- Insert virtual coins (100, 200, 500, 1000 millimes)
+- Real-time countdown timer with progress bar
+- Audio feedback on coin insertion
+- Auto-timeout with sound alerts in the last 10 seconds
+- Displays current balance and date/time
+- "Out of service" screen when meter is disabled
+
+### 🔐 Admin Interface
+- Secure admin login
+- Dashboard with total collected amount and session count
+- Session history list
+- Toggle meter status (In service / Out of service)
+- Empty cash register (vider la caisse)
+- Change paper roll (bobine)
+- Toggle coin jam fault (panne monnaie)
+- Alerts for paper jam (no tickets remaining)
+
+### ⚙️ Configuration
+- Price per minute (millimes)
+- Timeout duration
+- Minimum amount
+- Parking zone and title
+- GPS coordinates
+- IP address
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| [Kotlin](https://kotlinlang.org/) | Primary language |
+| [Android SDK 35](https://developer.android.com/) | Target platform (min SDK 24) |
+| [Room Database](https://developer.android.com/training/data-storage/room) | Local persistence |
+| [ViewModel + LiveData](https://developer.android.com/topic/libraries/architecture/viewmodel) | MVVM architecture |
+| [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) | Async operations |
+| [View Binding](https://developer.android.com/topic/libraries/view-binding) | UI binding |
+| [Material Design](https://material.io/) | UI components |
+
+---
+
+## 🏗️ Architecture
+
+This app follows the **MVVM** (Model-View-ViewModel) pattern:
+
 ```
-.
-├── app
-│   ├── build.gradle.kts
-│   └── src
-│       └── main
-│           ├── AndroidManifest.xml
-│           ├── java/com/example/parcmetreaissyal3si
-│           │   ├── MainActivity.kt
-│           │   └── ui/theme
-│           │       ├── Color.kt
-│           │       ├── Theme.kt
-│           │       └── Type.kt
-│           └── res
-├── build.gradle.kts
-├── settings.gradle.kts
-└── gradlew
+app/src/main/java/com/example/parcmetreaissyal3si/
+├── data/               # Room entities & DAOs
+│   ├── Session.kt
+│   ├── SessionDao.kt
+│   ├── Config.kt
+│   ├── ConfigDao.kt
+│   └── AppDatabase.kt
+├── repository/         # Data layer
+│   └── ParcmetreRepository.kt
+├── viewmodel/          # Business logic
+│   ├── ClientViewModel.kt
+│   ├── AdminViewModel.kt
+│   └── ConfigViewModel.kt
+└── ui/                 # Activities & Adapters
+    ├── client/
+    ├── admin/
+    ├── config/
+    └── adapter/
 ```
 
-## Fichiers Kotlin principaux
-- `MainActivity.kt` : Contient toute la logique applicative
-  - Data classes : Config, Session
-  - AppData : Gestion des données en mémoire
-  - Screens : Configuration, Client, Administration
+---
 
-## Composables Jetpack Compose
-- `MainContent` : Navigation entre les écrans
-- `ConfigurationScreen` : Configuration des paramètres du parc-mètre
-- `ClientScreen` : Interface client pour insertion de pièces
-- `AdministrationScreen` : Interface d'administration avec accès contrôlé
+## 🚀 Getting Started
 
-## Fonctionnalités
+### Prerequisites
 
-### Configuration
-- Prix par minute : 10 millimes
-- Timeout : 1 minute
-- Montant minimum : 1 dinar
-- État : En service / Hors service
-- Adresse IP : 10.10.2.25
-- Localisation GPS
-- Tickets par bobine : 100
-- Titre personnalisable
+- [Android Studio](https://developer.android.com/studio) (Hedgehog or later)
+- Android device or emulator with API 24+
 
-### Client
-- Insertion de pièces : 100, 200, 500 millimes et 1 dinar
-- Bouton rouge "Annuler" : annule la transaction
-- Bouton vert "Valider" : valide si montant ≥ 1 dinar
-- Timeout automatique avec signal sonore
+### Installation
 
-### Administration
-- Code d'accès : `1234`
-- Affichage de l'état de la machine
-- Montant total encaissé
-- Nombre de tickets restants
-- Réinitialisation de la caisse
-- Réinitialisation des tickets
-- Simulation de changement de bobine papier
+```bash
+# 1. Clone the repository
+git clone https://github.com/aissouss/android-parking-meter.git
 
-## Lancement du projet
-1. Ouvrir le projet dans **Android Studio**
-2. Synchroniser le projet avec Gradle
-3. Lancer sur un émulateur Android (API 24+) ou un appareil physique
+# 2. Open in Android Studio
+File → Open → select the cloned folder
 
-## Technologies utilisées
-- Kotlin
-- Jetpack Compose
-- Architecture simple (données en mémoire)
-- Aucune dépendance externe
+# 3. Sync Gradle
+Android Studio will prompt you — click "Sync Now"
+
+# 4. Run the app
+Click ▶ Run or press Shift + F10
+```
+
+---
+
+## 📋 How It Works
+
+1. The **client** opens the app and sees the parking meter interface
+2. They insert coins using the on-screen buttons
+3. After inserting enough (minimum amount), they press **Valider** to get a ticket
+4. A countdown timer starts; a beep warns them in the last 10 seconds
+5. The **admin** logs in separately to monitor sessions, collected amounts, and manage the meter's state
+
+---
+
+## 🎓 Academic Context
+
+This project was developed as a mobile development assignment (Devoir Mobile) during the L3 Software Engineering program.
+
+**Authors:** Aissous & Boukraa  
+[GitHub](https://github.com/aissouss)
+
+---
+
+## 📄 License
+
+This project is for educational use only.
