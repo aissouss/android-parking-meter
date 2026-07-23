@@ -114,7 +114,7 @@ Click ▶ Run or press Shift + F10
 
 This project was developed as a mobile development assignment (Devoir Mobile) during the L3 Software Engineering program.
 
-**Authors:** Aissous & Boukraa  
+**Authors:** Aissya Boukraa  
 [GitHub](https://github.com/aissouss)
 
 ---
